@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-/// @title GM — the simplest possible app on Limonata.
+/// @title GM - the simplest possible app on Limonata.
 /// @notice Every `gm()` call is a real transaction. On Limonata the protocol
 /// pays the gas (written into consensus), so the caller spends nothing.
 contract GM {
