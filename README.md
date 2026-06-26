@@ -66,9 +66,10 @@ cast balance $ME --rpc-url $RPC
 ---
 
 ## That's the whole trick
-Your users never pay for gas, and they never need to hold the coin to use your app. Build whatever you want on top — it's a normal EVM chain.
+Your users never pay for gas. They do need a tiny LIMO balance on hand, though: the chain checks whether the sender can afford the gas *before* it decides to sponsor it, so a literally-zero-balance account is rejected with *insufficient funds*. The fix is one-time — fund the address from the faucet once (step 3 above also creates it on-chain), and after that the protocol covers gas and that balance is never actually spent. On mainnet there is no faucet, so users acquire a small amount of LIMO once. Build whatever you want on top — it's a normal EVM chain.
 
 - **Hardhat / Viem / Ethers** all work too — just point them at `https://rpc.limonata.xyz` (chain `10777`).
+- **How it works** (who pays gas, the honest details): https://github.com/Limonata-Blockchain/limonata/blob/main/HOW_IT_WORKS.md
 - **Chain source** (Apache-2.0): https://github.com/Limonata-Blockchain/limonata
 - **Live gasless demo**: https://limonata.xyz/demo
 
